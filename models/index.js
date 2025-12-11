@@ -1,6 +1,10 @@
 // models/index.js
 const { Sequelize } = require("sequelize");
 
+// Explicitly require pg to ensure it's loaded before Sequelize initialization
+// This is important for Vercel/serverless deployments
+require("pg");
+
 let sequelize = null;
 
 function getSequelize() {
