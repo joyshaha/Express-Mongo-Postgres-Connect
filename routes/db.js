@@ -11,7 +11,7 @@ router.get("/test-db", async (req, res) => {
         console.log("Aiven Postgres connected!");
         return res.json({ ok: true, message: "Aiven Postgres connected!" });
     } catch (err) {
-        console.log("Aiven Postgres connection failed!");
+        console.log("Aiven Postgres connection failed!", err);
         return res.status(500).json({ ok: false, error: err.message });
     }
   });
